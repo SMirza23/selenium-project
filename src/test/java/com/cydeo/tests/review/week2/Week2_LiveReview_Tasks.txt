@@ -31,7 +31,7 @@ Week 2 Live class practices:
 ----------------------
 
 
-// TC#1: Registration Form Page Testing
+// TC#3: Registration Form Page Testing
 
     // 1. Open Chrome browser
     // 2. Go to https://practice.cydeo.com/registration_form
@@ -40,7 +40,7 @@ Week 2 Live class practices:
 
 
 
-// TC#2: Registration Form Page Filling Form Test
+// TC#4: Registration Form Page Filling Form Test
 
     // 1. Open Chrome browser
     // 2. Go to https://practice.cydeo.com/registration_form
