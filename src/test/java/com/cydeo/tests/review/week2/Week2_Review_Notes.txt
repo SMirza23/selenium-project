@@ -99,8 +99,8 @@ if text has white spaces: //tagname[normalize-space(text())='textOfWebEleemnt']
 
  cssSelector -> tagname[attribute='value']
                 *[attribute='value']
-                tagname#idValue
-                tagname.classValue
+                tagname#idValue // #: stands for id attribute name
+                tagname.classValue // . : stands for class attribute name
                 You can go to parent to child with using ">"
                 You can't go form child to parent
                 You can't go sibling to sibling
