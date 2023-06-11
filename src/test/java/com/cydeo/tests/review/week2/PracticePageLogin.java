@@ -61,6 +61,8 @@ public class PracticePageLogin {
         WebElement resultText1 = driver.findElement(By.cssSelector(".flash.success"));
         WebElement resultText2 = driver.findElement(By.xpath("//div[normalize-space(text())='You logged into a secure area!']"));
 
+        System.out.println(resultText1.getText());
+
         String actualText = resultText1.getText();
         String expectedText = "You logged into a secure area!";
 
