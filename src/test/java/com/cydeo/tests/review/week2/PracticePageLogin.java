@@ -21,7 +21,7 @@ public class PracticePageLogin {
     // 6. Verify text displayed on page
     //    Expected: "You logged into a secure area!"
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         // 1. Open Chrome browser
         //WebDriverManager.chromedriver().setup();
        // WebDriver driver = new ChromeDriver();
@@ -30,6 +30,7 @@ public class PracticePageLogin {
 
         driver.manage().window().maximize();
 
+        // it will give time to the web app until webelement found
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
         // 2. Go to https://practice.cydeo.com/login
@@ -41,6 +42,8 @@ public class PracticePageLogin {
         WebElement username3 = driver.findElement(By.cssSelector("input[name='username']"));
 
         username1.sendKeys("tomsmith");
+
+        Thread.sleep(3000);
 
         // 4. Enter password: "SuperSecretPassword"
         WebElement password = driver.findElement(By.xpath("//input[@type='password']"));
@@ -67,5 +70,6 @@ public class PracticePageLogin {
             System.out.println("Text verification failed!");
         }
 
+        driver.quit();
     }
 }
