@@ -62,9 +62,11 @@ content: My name is Mike.
 
  - HTML stands for HyperText Markup Language, and it is the standard language used to create and structure content on the web.
 
- - HTML is used to create certain structure for web applications using markup tags which are used to structure and format content on a web page. These tags are used to create headings, paragraphs, lists, links, tables, images, and other elements of a web page.
+ - HTML is used to create certain structure for web applications using markup tags which are used to structure and format content
+ on a web page. These tags are used to create headings, paragraphs, lists, links, tables, images, and other elements of a web page.
 
- - When a web page is loaded, the browser creates a Document Object Model (DOM) of the page. When we right click and select inspect, we can see DOM of the page.
+ - When a web page is loaded, the browser creates a Document Object Model (DOM) of the page. When we right click and select inspect,
+  we can see DOM of the page.
 
 
 -----------------------
