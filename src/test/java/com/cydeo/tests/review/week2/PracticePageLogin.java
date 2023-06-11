@@ -40,14 +40,25 @@ public class PracticePageLogin {
         WebElement username2 = driver.findElement(By.xpath("//input[@name='username']"));
         WebElement username3 = driver.findElement(By.cssSelector("input[name='username']"));
 
-        // 4. Enter password: "SuperSecretPassword"
+        username1.sendKeys("tomsmith");
 
+        // 4. Enter password: "SuperSecretPassword"
+        WebElement password = driver.findElement(By.xpath("//input[@type='password']"));
+        password.sendKeys("SuperSecretPassword");
 
 
         // 5. Click to Login button
+        WebElement loginBtn = driver.findElement(By.xpath("//button[.='Login']"));
+        loginBtn.click();
 
 
         // 6. Verify text displayed on page
         //    Expected: "You logged into a secure area!"
+
+        WebElement resultText1 = driver.findElement(By.cssSelector(".flash.success"));
+        WebElement resultText2 = driver.findElement(By.xpath("//div[normalize-space(text())='You logged into a secure area!']"));
+
+
+
     }
 }
