@@ -20,6 +20,7 @@ TODAY'S REVIEW SCHEDULE:
 - How many locators?
   8 locator: id, name, classname, linkText, partialLinkText, tagname, xpath, and CssSelector
 
+--> All this locators are also methods coming from Selenium library
 
  __________________________________________________
 |                                                  |
@@ -70,6 +71,9 @@ tagname -> driver.findElement(By.tagName("form"));
 
 --> XPATH:
 
+--> "/": it goes one by one starting from html
+--> "//" : it jumps the webelement we want to locate
+
 xpath -> Absolute xpath: /html/body/div/div/div/div/a
          Relative xpath: //tagname[@attributename='value']
                          //*[@attributename='value']
@@ -89,6 +93,7 @@ if text has white spaces: //tagname[normalize-space(text())='textOfWebEleemnt']
 
 
 -----------------
+
 
 --> CSSSELECTOR:
 
@@ -133,6 +138,30 @@ xpath: //label[@for='password']
 
 ------------------------------
 
+P.I.Q: WHAT IS YOUR LOCATOR APPROACH?
+- If there is id, I make sure it is not dynamic and I use it.
+- If there is class, I can check if it is unique or not by using "." from cssSelector
+- If the web element is a LINK, I use "linkText" locator
+- If none of the above is applicable, I am comfortable creating custom locators using XPATH.
+
+
+P.I.Q: WHAT IS THE DIFFERENCE BETWEEN CSS AND XPATH?
+- Css is slightly faster than xpath on IE, other browsers it is negligible.
+- Css is easier to read and write
+
+1.  CSS cannot locate using text of web elements
+    XPATH:  //*[.="Don't Click!"]
+
+2.  CSS cannot find from matches base on index (different parent)
+    XPATH:  (xpathFormula)[indexNumber]
+
+3.  CSS cannot go from child to parent
+    XPATH:  //button/../ --> goes back to parent
+
+* xpath can do more than css, but it is little bit complex
+
+
+--------------------------------
 
 -> getText(): it will return to text of WebElement in String type
 
@@ -154,6 +183,19 @@ String attributeValue = EebElement.getAttribute("attributeNameofElelement");
                    If any element does not found, it will not throw any exception.
                     It will return to empty list
 
+
+P.I.Q: WHAT ARE THE DIFFERENCES IN BETWEEN FINDELEMENT() AND FINDELEMENTS() METHODS?
+- findElement()
+  - returns single web element
+  - return type: WebElement (coming from Selenium)
+  - it will throw NoSuchElementException if it cannot find a web element with given locator.
+
+- findElements():
+  - returns List of WebElements
+  - return type : List<WebElement>
+  - it will NOT throw exception, it will return empty list
+
+
 P.I.Q: How can you locate all links in any web page? 
       List<WebElement> allLinks = driver.findElements(By.tagname("a")) 
                                 = driver.findElements(By.xpath("//a"))
@@ -172,6 +214,15 @@ P.I.Q: How can you locate all links in any web page?
                   We can select ONLY ONE from radio buttons
                   We can handle it with using isSelected() method to check if checkboxes is selected or not
                   We can also use isEnabled() method to check, if checkbox is enabled or disabled  
+
+
+P.I.Q: HOW DO WE HANDLE CHECKBOXES AND RADIO BUTTONS
+First, we locate then we can click.
+We can check if they are selected or not. --> - isSelected();
+We can check if they are enabled or not. --> isEnabled();
+
+isSelected(); --> if web element is selected, it will return true, if not false.
+isEnabled(); --> if web element is enabled, it will return true, if not false.
 
 
 ----------------------------------------------------------------
