@@ -30,11 +30,12 @@ public class T1_Bing_Search {
     }
 
     @Test
-    public void bing_search_test(){
+    public void bing_search_test() throws InterruptedException {
         //3- Write “apple” in search box
 
         //locate the search box
-        WebElement searchBox = driver.findElement(By.xpath("//input[@name='q']"));
+        WebElement searchBox = driver.findElement(By.xpath("//textarea[@name='q']"));
+        Thread.sleep(2000);
         searchBox.sendKeys(ConfigurationReader.getProperty("searchValue") + Keys.ENTER);
 
         //4- Verify title:

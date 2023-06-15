@@ -39,7 +39,7 @@ public class T4_use_config_reader {
     public void google_search_test(){
 
         // 3- Write “apple” in search box
-        WebElement searchBox = driver.findElement(By.xpath("//input[@name='q']"));
+        WebElement searchBox = driver.findElement(By.xpath("//textarea[@name='q']"));
         searchBox.sendKeys(ConfigurationReader.getProperty("searchValue") + Keys.ENTER);
 
         // 4- Verify title:
