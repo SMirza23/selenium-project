@@ -26,7 +26,7 @@ Week 3 Live Review Tasks
     -------------------------
 
 // TC : Iframe practice
-    // 1. Users are already login and on the homepage
+    // 1. Users are already login and on the homepage of CRM app
     // 2. Users click the MESSAGE tab
     // 3. Users write test message
     // 4. Users click the SEND button
