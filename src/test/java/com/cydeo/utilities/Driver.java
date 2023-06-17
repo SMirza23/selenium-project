@@ -42,7 +42,6 @@ public class Driver {
                     driver = new ChromeDriver();
                     driver.manage().window().maximize();
                     driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-                    driver.manage().deleteAllCookies();
                     break;
                 case "firefox":
                     WebDriverManager.firefoxdriver().setup();

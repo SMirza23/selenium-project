@@ -24,7 +24,7 @@ public class T2_DriverUtil_Practice {
 //    }
 
     @Test
-    public void bing_search_test(){
+    public void bing_search_test()  {
 
         //2- Go to: https://bing.com
         //Driver.getDriver() ---> will return me the "driver"
@@ -34,7 +34,8 @@ public class T2_DriverUtil_Practice {
         //3- Write “apple” in search box
 
         //locate the search box
-        WebElement searchBox = Driver.getDriver().findElement(By.xpath("//input[@name='q']"));
+        WebElement searchBox = Driver.getDriver().findElement(By.xpath("//textarea[@name='q']"));
+        BrowserUtils.sleep(2);
         searchBox.sendKeys(ConfigurationReader.getProperty("searchValue") + Keys.ENTER);
 
         //4- Verify title:
@@ -63,7 +64,7 @@ public class T2_DriverUtil_Practice {
         //3- Write “apple” in search box
 
         //locate the search box
-        WebElement searchBox = Driver.getDriver().findElement(By.xpath("//input[@name='q']"));
+        WebElement searchBox = Driver.getDriver().findElement(By.xpath("//textarea[@name='q']"));
         searchBox.sendKeys(ConfigurationReader.getProperty("searchValue") + Keys.ENTER);
 
         //4- Verify title:
