@@ -4,6 +4,7 @@ import com.cydeo.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -44,6 +45,15 @@ public class HardvsSoft_Assertion {
         WebElement loginBtn1 = driver.findElement(By.id("wooden_spoon"));
         loginBtn1.click();
 
+        Assert.assertTrue(driver.getTitle().equals("Secure Are"));
+
+        WebElement resultText = driver.findElement(By.xpath("//div[normalize-space(text()) ='You logged into a secure area!']"));
+        String actualResulText = resultText.getText();
+        String expectedResultText = "You logged into a secure area!!!";
+
+        System.out.println("resultText.getText() = " + resultText.getText());
+
+        Assert.assertTrue(actualResulText.contains(expectedResultText));
 
 
     }
