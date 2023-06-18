@@ -32,6 +32,7 @@ public class IframePractice extends TestBase {
 
         msgFrame.sendKeys("Hello");
 
+
         // 4. Users click the SEND button
 
         //driver.switchTo().parentFrame(); // it will take to the parent iframe if there is a parent
