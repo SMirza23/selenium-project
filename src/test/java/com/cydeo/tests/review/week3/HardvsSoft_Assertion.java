@@ -49,7 +49,7 @@ public class HardvsSoft_Assertion {
         Thread.sleep(3000);
 
         // I made it failed purposely to see if hard assert failed, next line of codes will not execute
-        Assert.assertTrue(driver.getTitle().equals("Secure Are"));
+        Assert.assertEquals(driver.getTitle(),"Secure Are","Title verification failed");
 
         Thread.sleep(3000);
 
@@ -79,7 +79,7 @@ public class HardvsSoft_Assertion {
 
         SoftAssert softAssert = new SoftAssert();
 // I made it failed purposely to see if soft assert failed, next line of codes will still execute
-        softAssert.assertTrue(driver.getTitle().equals("Secure Are"));
+        softAssert.assertEquals(driver.getTitle(),"Secure Are","Title verification failed");
 
         WebElement resultText = driver.findElement(By.xpath("//div[normalize-space(text()) ='You logged into a secure area!']"));
         String actualResulText = resultText.getText();
@@ -89,6 +89,7 @@ public class HardvsSoft_Assertion {
 
        softAssert.assertTrue(actualResulText.contains(expectedResultText));
 
+       // We have to use assertAll() method at the end of Test method to execute all assertions
       softAssert.assertAll();
 
 
