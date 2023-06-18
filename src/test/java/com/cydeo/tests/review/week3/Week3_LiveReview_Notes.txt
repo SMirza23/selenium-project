@@ -10,6 +10,7 @@ TODAY'S REVIEW SCHEDULE:
  - Java Faker
  - Alerts - Iframes - Windows
  - WebTables - Properties - ConfigReader
+ - TestBase
 
 
  -----------------------------------------------------------
@@ -49,18 +50,25 @@ P.I.Q: WHAT ARE HARD ASSERT AND SOFT ASSERT?
  HARD ASSERTION:
 
   - A hard assertion does not continue with execution until the assertion condition is met.
-  - Hard assertions usually throw an Assertion Error whenever an assertion condition has not been met. The test case will be immediately marked as Failed when a hard assertion condition fails.
 
-  - A scenario to use this kind of assertion is that, when you want to verify if you have logged in correctly and fail the test if you haven’t made a successful login, as there is no point in proceeding further if the pre-condition(login) itself fails.
+  - Hard assertions usually throw an Assertion Error whenever an assertion condition has not been met.
+  The test case will be immediately marked as Failed when a hard assertion condition fails.
+
+  - A scenario to use this kind of assertion is that, when you want to verify if you have logged in
+  correctly and fail the test if you haven’t made a successful login, as there is no point in proceeding
+   further if the pre-condition(login) itself fails.
 
 
  SOFT ASSERTION:
 
   - A soft assertion continues with the next step of the test execution even if the assertion condition is not met.
 
-  - SoftAssert in TestNG helps to collect all the assertions throughout the @Test method and to see assertions result at the end of the test, we have to invoke assertAll().
+  - SoftAssert in TestNG helps to collect all the assertions throughout the @Test method and to see assertions
+  result at the end of the test, we have to invoke assertAll().
 
-  - SoftAssert doesn't throw an exception when an assert fails, but it records the failure. The test execution will continue with the next step after the assert statement. Calling assertAll() will cause an exception to be thrown if at least one assertion failed.
+  - SoftAssert doesn't throw an exception when an assert fails, but it records the failure. The test execution
+  will continue with the next step after the assert statement. Calling assertAll() will cause an exception to be
+  thrown if at least one assertion failed.
 
   Soft Assertion Syntax:  SoftAssert softAssert = new SoftAssert();
                           softAssert.assertTrue() or softAssert.assertEqual()
@@ -72,9 +80,12 @@ P.I.Q: WHAT ARE HARD ASSERT AND SOFT ASSERT?
 
  P.I.Q: HOW CAN WE DECIDE? 
 
-- If you need to execute all the steps of a test case to be executed even after an assertion fails, and you also want to report assertion exception, then opt for using Soft Assertions. Using Soft Assertions in your test scripts is a good practice and an effective way of handling your test execution
+- If you need to execute all the steps of a test case to be executed even after an assertion fails,
+and you also want to report assertion exception, then opt for using Soft Assertions. Using Soft Assertions
+in your test scripts is a good practice and an effective way of handling your test execution
 
-- If you want your test case execution to proceed only after an assertion is passed (For Example, To Verify valid login and only then execute the other steps), then use Hard Assertions
+- If you want your test case execution to proceed only after an assertion is passed (For Example, To Verify
+ valid login and only then execute the other steps), then use Hard Assertions
 
 
 -------------------------------
@@ -119,7 +130,11 @@ P.I.Q: WHAT IS IFRAME AND HOW TO HANDLE?
 
 - Iframe is HTML inside of another HTML.
 
-- Since selenium can focus one thing at a time. By default, it will be looking in the main   <html> code. If there is any inner <html>/iframe , we have to handle it with locating iframe and we must explicitly switch to it to be able to do any action in it. Otherwise, Selenium will not be able to see any web element from the inner html <iframe>
+- Since selenium can focus one thing at a time. By default, it will be looking in the main <html> code.
+If there is any inner <html>/iframe , we have to handle it with locating iframe and we must explicitly
+switch to it to be able to do any action in it. Otherwise, Selenium will not be able to see
+any web element
+from the inner html <iframe>
 
 
 
@@ -143,7 +158,7 @@ P.I.Q: HOW DO YOU HANDLE MULTIPLE WINDOWS/TABS USING SELENIUM?
 - To get current windows handle: 
         String currentWindow = driver.getWindowHandle();
 
-- To get all of the currently open windows’ handles: 
+- To get all the currently open windows’ handles:
 
         Set<String> allWindowHandles = driver.getWindowHandles();
           for(String each : allWindowHandles) {
@@ -161,17 +176,17 @@ P.I.Q: HOW TO FIND DATA IN A WEB TABLE?
 - We start locating from <table> element and we go one by one tr, th, or td to reach data we want to find.
 
 - tr: table row  -> used to create rows inside of table
-- th: table header-> used to create cells, but it will make content bolded and centered
-- td: table data     -> used to create cells inside of a table
+- th: table header -> used to create cells, but it will make content bolded and centered
+- td: table data -> used to create cells inside a table
 
 
     For example;
 
-- //table[@id='table1']//tr -> That returns all of the rows inside of table 1
+- //table[@id='table1']//tr -> That returns all the rows inside of table 1
 
-- //table[@id='table1']/tbody//tr -> That returns all of the rows inside of body 
+- //table[@id='table1']/tbody//tr -> That returns all the rows inside of body
 
-- //table[@id='table1']/tbody//tr//td -> returns all of the cells in all of the row of body
+- //table[@id='table1']/tbody//tr//td -> returns all of the cells in all the row of body
 
 
 
