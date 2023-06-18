@@ -1,8 +1,11 @@
 package com.cydeo.tests.review.week3;
 
 import com.cydeo.utilities.WebDriverFactory;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 import java.time.Duration;
 
@@ -30,5 +33,37 @@ public class HardvsSoft_Assertion {
 
     }
 
+    @Test
+    public void login_test_with_hard_assertion(){
+        WebElement username = driver.findElement(By.name("username"));
+        username.sendKeys("tomsmith");
+
+        WebElement password = driver.findElement(By.name("password"));
+        password.sendKeys("SuperSecretPassword");
+
+        WebElement loginBtn1 = driver.findElement(By.id("wooden_spoon"));
+        loginBtn1.click();
+
+
+
+    }
+
+
+    @Test
+    public void login_test_with_soft_assertion(){
+
+        WebElement username = driver.findElement(By.name("username"));
+        username.sendKeys("tomsmith");
+
+        WebElement password = driver.findElement(By.name("password"));
+        password.sendKeys("SuperSecretPassword");
+
+        WebElement loginBtn1 = driver.findElement(By.id("wooden_spoon"));
+        loginBtn1.click();
+
+
+
+
+    }
 
 }
