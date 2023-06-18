@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 import java.time.Duration;
 
@@ -35,7 +36,7 @@ public class HardvsSoft_Assertion {
     }
 
     @Test
-    public void login_test_with_hard_assertion(){
+    public void login_test_with_hard_assertion() throws InterruptedException {
         WebElement username = driver.findElement(By.name("username"));
         username.sendKeys("tomsmith");
 
@@ -45,11 +46,16 @@ public class HardvsSoft_Assertion {
         WebElement loginBtn1 = driver.findElement(By.id("wooden_spoon"));
         loginBtn1.click();
 
+        Thread.sleep(3000);
+
+        // I made it failed purposely to see if hard assert failed, next line of codes will not execute
         Assert.assertTrue(driver.getTitle().equals("Secure Are"));
+
+        Thread.sleep(3000);
 
         WebElement resultText = driver.findElement(By.xpath("//div[normalize-space(text()) ='You logged into a secure area!']"));
         String actualResulText = resultText.getText();
-        String expectedResultText = "You logged into a secure area!!!";
+        String expectedResultText = "You logged into a secure area!";
 
         System.out.println("resultText.getText() = " + resultText.getText());
 
@@ -70,6 +76,20 @@ public class HardvsSoft_Assertion {
 
         WebElement loginBtn1 = driver.findElement(By.id("wooden_spoon"));
         loginBtn1.click();
+
+        SoftAssert softAssert = new SoftAssert();
+// I made it failed purposely to see if soft assert failed, next line of codes will still execute
+        softAssert.assertTrue(driver.getTitle().equals("Secure Are"));
+
+        WebElement resultText = driver.findElement(By.xpath("//div[normalize-space(text()) ='You logged into a secure area!']"));
+        String actualResulText = resultText.getText();
+        String expectedResultText = "You logged into a secure area!!!";
+
+        System.out.println("resultText.getText() = " + resultText.getText());
+
+       softAssert.assertTrue(actualResulText.contains(expectedResultText));
+
+      softAssert.assertAll();
 
 
 
