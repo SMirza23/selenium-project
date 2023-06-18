@@ -15,7 +15,7 @@ import java.time.Duration;
 // This class is abstract because we don't want to create any object with using this class
 public abstract class TestBase {
 
-    WebDriver driver;
+    protected WebDriver driver;
 
     @BeforeMethod
     public void setup(){
