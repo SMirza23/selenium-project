@@ -150,6 +150,19 @@ from the inner html <iframe>
 
 -----------------------
 
+P.I.Q: IF THE TEST REGRESSION SUITE TAKES LONGER HOW TO OPTIMIZE IT TO REDUCE THE EXECUTION TIME?
+
+- Use test data management techniques: Managing test data efficiently can help reduce execution time.
+Instead writing test data in test classes we can store it in configuration.properties file
+
+- Implement test automation best practices: Ensure your test suite follows test automation
+best practices, such as minimizing unnecessary waiting time, using efficient assertions,
+and optimizing test scripts for speed. Streamlining test automation practices can contribute
+to faster execution times.
+
+
+---------------------------
+
 
 P.I.Q: HOW DO YOU HANDLE MULTIPLE WINDOWS/TABS USING SELENIUM?
 
