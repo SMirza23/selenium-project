@@ -18,7 +18,7 @@ public class CRM_Utilities {
 
         //3. Enter valid username
         WebElement inputUsername = driver.findElement(By.xpath("//input[@name='USER_LOGIN']"));
-        inputUsername.sendKeys("helpdesk1@cydeo.com");
+        inputUsername.sendKeys("hr1@cybertekschool.com");
 
         //4. Enter valid password
         WebElement inputPassword = driver.findElement(By.xpath("//input[@name='USER_PASSWORD']"));
