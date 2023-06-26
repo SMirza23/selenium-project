@@ -11,11 +11,14 @@ public class T2_Upload_Practice {
 
     @Test
     public void uploading_test(){
+
         //TC #2 Upload Test
         //1. Go to https://practice.cydeo.com/upload
         Driver.getDriver().get("https://practice.cydeo.com/upload");
+
         //2. Find some small file from your computer, and get the path of it.
-        String path = "/Users/gurhan/Desktop/file.txt";
+        String path = "C:\\Users\\Lenovo\\Downloads\\some-file.txt";
+
         /*
         Windows path option #1: C:\\Users\\hayat\\Desktop\\note.txt
         Windows path option #2: C://Users/hayat/Desktop/note.txt
