@@ -74,7 +74,7 @@ public class T1_Registration_Form {
         //driver.quit();
         //Driver.getDriver().quit(); --> we don't use this method anymore. Because we want to assign the value back to null
         // So if we have another test, our code can continue executing.
-        Driver.closeDriver();
+       Driver.closeDriver();
     }
 
 }
