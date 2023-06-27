@@ -34,7 +34,6 @@ public class T2_Upload_Practice {
         //chooseFileButton.sendKeys("/Users/gurhan/Desktop/file.txt");
 
         WebElement uploadButton = Driver.getDriver().findElement(By.id("file-submit"));
-
         uploadButton.click();
 
         //4. Assert:

@@ -29,7 +29,7 @@ public class T6_JavascriptExecutor_Practice {
         }
 
         //b. 750 pixels up 10 times
-        //JavaScript method to use : window.scrollBy(0,0)
+        //JavaScript method to use: window.scrollBy(0,0)
         for (int i = 0; i < 10; i++) {
             BrowserUtils.sleep(1);
             js.executeScript("window.scrollBy(0,-750)");
