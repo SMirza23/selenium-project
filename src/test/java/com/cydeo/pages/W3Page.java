@@ -12,7 +12,7 @@ public class W3Page {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    //#2: Instead of using findElement method we use @FindBy annotation
+    //#2: Instead of using findElement method, we use @FindBy annotation
     @FindBy(id = "demo")
     public WebElement paragraph;
 
